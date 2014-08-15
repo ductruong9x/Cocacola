@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/adView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow
+                android:id="@+id/tabedit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/name"
+                    android:textStyle="bold"
+                    android:textColor="@color/app_color" />
+
+                <EditText
+                    android:id="@+id/edContent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:hint="@string/name" />
+            </TableRow>
+
+            <TextView
+                android:layout_below="@+id/tabedit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textColor="@color/app_color"
+                android:enabled="false"
+                android:text="@string/note"
+                android:id="@+id/tvnote" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvnote"
+                android:id="@+id/tableRow">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font_size"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp"
+                    android:textColor="@color/app_color" />
+
+                <SeekBar
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/seeFont"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:thumbOffset="5px"
+                    android:max="250"
+                    android:minHeight="10dip"
+                    android:maxHeight="10dip"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tableRow"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:textColor="@color/app_color"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rotate"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp" />
+
+                <SeekBar
+                    android:id="@+id/seeRotate"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content"
+                    android:thumbOffset="5px"
+                    android:max="360"
+                    android:minHeight="10dip"
+                    android:maxHeight="10dip"
+                    android:layout_gravity="center_vertical"
+                    android:progressDrawable="@drawable/custom_seekbar"
+                    android:thumb="@drawable/thumb" />
+
+            </TableRow>
+
+            <RelativeLayout
+                android:id="@+id/layout_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:clickable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgpreview"
+                    android:src="@drawable/coca2"
+                    android:layout_gravity="center_horizontal" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/previour"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/btnPreviour" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/next"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/btnNext" />
+            </RelativeLayout>
+
+
+            <TableRow
+                android:id="@+id/layout_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_preview">
+
+                <TextView
+                    android:textColor="@color/app_color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/font_style"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp" />
+
+                <Spinner
+
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/chooseFont"
+                    android:layout_gravity="center_horizontal" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_font"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:layout_margin="8dp"
+                    android:textColor="@color/white"
+                    android:id="@+id/btnupdateWidget"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:background="@drawable/update"/>
+
+                <Button
+                    android:textColor="@color/white"
+                    android:background="@drawable/save"
+                    android:id="@+id/btnSave"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:layout_margin="8dp"/>
+
+            </TableRow>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/adView"
+        ads:adUnitId="ca-app-pub-1857950562418699/2078551567"
+        ads:adSize="SMART_BANNER"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>
